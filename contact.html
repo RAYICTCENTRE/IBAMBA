@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ibamba | Contact Us - Book a Table</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: linear-gradient(145deg, #FEFAF5 0%, #FCF1E8 100%); }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+    header { background: rgba(25, 22, 19, 0.95); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(198,104,46,0.3); }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; flex-wrap: wrap; }
+    .logo-img { width: 52px; height: 52px; object-fit: cover; border-radius: 16px; border: 2px solid #C6682E; }
+    .logo-text h1 { font-size: 1.7rem; font-weight: 800; color: #F7E9DE; }
+    .logo-text span { font-size: 0.7rem; color: #C6682E; }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a { text-decoration: none; font-weight: 600; color: #E7DECD; transition: 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: #C6682E; }
+    .mobile-menu { display: none; font-size: 1.8rem; cursor: pointer; color: #C6682E; }
+    .page-header { background: linear-gradient(115deg, #2C241A 0%, #3A2E24 100%); padding: 70px 0 50px; text-align: center; }
+    .page-header h1 { font-size: 3rem; color: #F7E9DE; }
+    .contact-grid { display: flex; flex-wrap: wrap; gap: 50px; margin: 70px 0; }
+    .contact-info { flex: 1; background: white; padding: 40px; border-radius: 40px; box-shadow: 0 20px 35px rgba(0,0,0,0.05); }
+    .contact-info h3 { font-size: 1.6rem; margin-bottom: 30px; color: #2C241A; }
+    .info-detail { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; padding: 12px 0; border-bottom: 1px solid #F0E5DC; }
+    .info-detail i { width: 40px; height: 40px; background: #FFF1E6; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #C6682E; font-size: 1.2rem; }
+    .contact-form { flex: 1.2; background: white; padding: 40px; border-radius: 40px; box-shadow: 0 20px 35px rgba(0,0,0,0.05); }
+    .contact-form h3 { font-size: 1.6rem; margin-bottom: 25px; color: #2C241A; }
+    .form-group { margin-bottom: 22px; }
+    input, textarea { width: 100%; padding: 16px 20px; border: 2px solid #F0E5DC; border-radius: 60px; font-family: 'Inter', sans-serif; transition: 0.3s; background: #FFFCF9; }
+    textarea { border-radius: 28px; resize: vertical; }
+    input:focus, textarea:focus { outline: none; border-color: #C6682E; }
+    .btn-submit { background: #C6682E; color: white; padding: 14px 40px; border: none; border-radius: 60px; font-weight: 700; cursor: pointer; transition: 0.3s; font-size: 1rem; }
+    .btn-submit:hover { background: #A75223; transform: translateY(-2px); }
+    .map-card { background: #2C241A; border-radius: 32px; padding: 30px; text-align: center; margin-top: 30px; }
+    .map-card p { color: #E7DECD; margin-top: 12px; }
+    .feature-row { display: flex; flex-wrap: wrap; gap: 25px; margin: 50px 0 70px; }
+    .feature { flex: 1; background: white; padding: 28px; border-radius: 32px; text-align: center; transition: 0.3s; }
+    .feature i { font-size: 2rem; color: #C6682E; margin-bottom: 15px; }
+    .feature:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+    .footer-bar { background: linear-gradient(135deg, #0F0D0A 0%, #1A1612 100%); padding: 50px 0 25px; border-top: 3px solid #C6682E; margin-top: 20px; }
+    .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
+    .footer-col h4 { color: #C6682E; margin-bottom: 20px; }
+    .footer-col p, .footer-col a { color: #A89F92; text-decoration: none; line-height: 1.8; }
+    .social-icons i { font-size: 1.5rem; margin-right: 18px; color: #A89F92; transition: 0.3s; }
+    .copyright { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #2A241F; color: #7A6E62; }
+    @media (max-width: 880px) { .nav-links { display: none; width: 100%; flex-direction: column; } .nav-links.show { display: flex; } .mobile-menu { display: block; } .container { padding: 0 24px; } .contact-info, .contact-form { padding: 28px; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo-area"><img src="logo.jpeg" class="logo-img" onerror="this.src='https://placehold.co/52x52/BD6A33/white?text=IB'"><div class="logo-text"><h1>Ibamba</h1><span>RESTAURANT & LOUNGE</span></div></div>
+      <div class="mobile-menu" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
+      <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="active">Contact</a></li></ul>
+    </div>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container"><h1>Get in Touch</h1><p style="color:#D4C9BD; margin-top: 12px;">Book a table, ask a question, or just say hello</p></div>
+</section>
+
+<div class="container">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Visit Us</h3>
+      <div class="info-detail"><i class="fas fa-map-marker-alt"></i><div><strong>Address</strong><br>Plot 7 Katego Road, Kampala, Uganda</div></div>
+      <div class="info-detail"><i class="fas fa-phone-alt"></i><div><strong>Call / WhatsApp</strong><br>+256 705 999 227</div></div>
+      <div class="info-detail"><i class="fas fa-envelope"></i><div><strong>Email</strong><br>ibambacatering@gmail.com</div></div>
+      <div class="info-detail"><i class="fas fa-clock"></i><div><strong>Open Hours</strong><br>Every day — 7:00 AM to 12:00 AM (Midnight)</div></div>
+      <div class="map-card"><i class="fas fa-location-dot" style="font-size: 2rem; color: #C6682E;"></i><p>📍 Opposite craft village, near city center</p><p style="font-size: 0.85rem;">Free parking available for all guests</p></div>
+    </div>
+    <div class="contact-form">
+      <h3>Send a Message</h3>
+      <form id="contactForm">
+        <div class="form-group"><input type="text" placeholder="Your full name" required></div>
+        <div class="form-group"><input type="email" placeholder="Email address" required></div>
+        <div class="form-group"><input type="tel" placeholder="Phone number (optional)"></div>
+        <div class="form-group"><textarea rows="4" placeholder="Tell us what you need — table booking, event planning, or any question..."></textarea></div>
+        <button type="button" class="btn-submit" onclick="alert('Thank you! We will reply within a few hours.')">Send Message →</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="feature-row">
+    <div class="feature"><i class="fas fa-wifi"></i><h4>Free WiFi</h4><p>Fast internet for work or browsing</p></div>
+    <div class="feature"><i class="fas fa-music"></i><h4>Live Music</h4><p>Local artists every Friday night</p></div>
+    <div class="feature"><i class="fas fa-parking"></i><h4>Free Parking</h4><p>Safe and secure parking space</p></div>
+    <div class="feature"><i class="fas fa-wheelchair"></i><h4>Accessible</h4><p>Wheelchair friendly entrance</p></div>
+  </div>
+</div>
+
+<div class="footer-bar">
+  <div class="container">
+    <div class="footer-content"><div class="footer-col"><h4>Ibamba</h4><p>Modern African elegance<br>in Kampala's heart</p></div><div class="footer-col"><h4>Contact</h4><p><i class="fas fa-phone"></i> +256 705 999 227<br><i class="fas fa-envelope"></i> ibambacatering@gmail.com</p></div><div class="footer-col"><h4>Follow Us</h4><div class="social-icons"><i class="fab fa-instagram"></i><i class="fab fa-facebook-f"></i><i class="fab fa-tripadvisor"></i></div></div></div>
+    <div class="copyright"><p>© 2025 Ibamba Restaurant — Plot 7 Katego Road, Kampala | Open daily 7AM–12AM</p></div>
+  </div>
+</div>
+
+<script>
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const navLinks = document.getElementById('navLinks');
+  mobileBtn.addEventListener('click', () => navLinks.classList.toggle('show'));
+</script>
+</body>
+</html>

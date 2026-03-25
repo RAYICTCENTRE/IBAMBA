@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ibamba | Our Services - Dining, Bar & More</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: linear-gradient(145deg, #FEFAF5 0%, #FCF3EA 100%); color: #1E1B17; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+    header { background: rgba(25, 22, 19, 0.95); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(198,104,46,0.3); }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; flex-wrap: wrap; }
+    .logo-img { width: 52px; height: 52px; object-fit: cover; border-radius: 16px; border: 2px solid #C6682E; }
+    .logo-text h1 { font-size: 1.7rem; font-weight: 800; color: #F7E9DE; }
+    .logo-text span { font-size: 0.7rem; color: #C6682E; }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a { text-decoration: none; font-weight: 600; color: #E7DECD; transition: 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: #C6682E; }
+    .mobile-menu { display: none; font-size: 1.8rem; cursor: pointer; color: #C6682E; }
+    .page-header { background: linear-gradient(115deg, #2C241A 0%, #3A2E24 100%); padding: 70px 0 50px; text-align: center; }
+    .page-header h1 { font-size: 3rem; color: #F7E9DE; margin-bottom: 15px; }
+    .page-header p { color: #D4C9BD; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin: 70px 0; }
+    .service-card { background: white; border-radius: 32px; overflow: hidden; transition: all 0.3s; box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+    .service-card:hover { transform: translateY(-10px); box-shadow: 0 25px 40px rgba(0,0,0,0.12); }
+    .service-img { width: 100%; height: 250px; object-fit: cover; display: block; animation: blinkImage 2.6s infinite alternate; transition: transform 0.4s; }
+    .service-card:hover .service-img { transform: scale(1.02); }
+    @keyframes blinkImage {
+      0% { filter: brightness(0.98) contrast(1); }
+      100% { filter: brightness(1.08) contrast(1.06); }
+    }
+    .service-info { padding: 28px 24px 32px; }
+    .service-info h3 { font-size: 1.6rem; margin-bottom: 12px; color: #2C241A; }
+    .service-info p { color: #6B5E50; line-height: 1.6; margin-bottom: 16px; }
+    .service-tag { display: inline-block; background: #F2E5DA; padding: 6px 16px; border-radius: 40px; font-size: 0.8rem; color: #C6682E; font-weight: 600; }
+    .tourism-card { background: linear-gradient(125deg, #FFF6ED, #FFFAF4); border-radius: 48px; padding: 48px; text-align: center; margin: 40px 0 70px; border: 1px solid #F0DFCF; }
+    .tourism-card img { max-width: 340px; width: 100%; border-radius: 28px; margin: 20px 0; box-shadow: 0 20px 30px rgba(0,0,0,0.1); animation: blinkImage 2.8s infinite alternate; }
+    .btn-primary { background: #C6682E; color: white; padding: 12px 32px; border-radius: 48px; text-decoration: none; display: inline-block; transition: 0.3s; font-weight: 600; }
+    .btn-primary:hover { background: #A75223; transform: translateY(-2px); }
+    .footer-bar { background: linear-gradient(135deg, #0F0D0A 0%, #1A1612 100%); padding: 50px 0 25px; border-top: 3px solid #C6682E; margin-top: 40px; }
+    .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
+    .footer-col h4 { color: #C6682E; margin-bottom: 20px; }
+    .footer-col p, .footer-col a { color: #A89F92; text-decoration: none; line-height: 1.8; }
+    .social-icons i { font-size: 1.5rem; margin-right: 18px; color: #A89F92; transition: 0.3s; }
+    .social-icons i:hover { color: #C6682E; }
+    .copyright { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #2A241F; color: #7A6E62; font-size: 0.85rem; }
+    @media (max-width: 880px) { .nav-links { display: none; width: 100%; flex-direction: column; } .nav-links.show { display: flex; } .mobile-menu { display: block; } .container { padding: 0 24px; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo-area"><img src="logo.jpeg" class="logo-img" onerror="this.src='https://placehold.co/52x52/BD6A33/white?text=IB'"><div class="logo-text"><h1>Ibamba</h1><span>RESTAURANT & LOUNGE</span></div></div>
+      <div class="mobile-menu" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
+      <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="services.html" class="active">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container"><h1>Our Services</h1><p>Fresh food, cold drinks, and special experiences made for you</p></div>
+</section>
+
+<div class="container">
+  <div class="services-grid">
+    <div class="service-card"><img src="1.jpg" class="service-img" onerror="this.src='https://placehold.co/600x400/EBDBCB/9F5A2A?text=Fine+Dining'"><div class="service-info"><h3>🍽️ Fine Dining</h3><p>Fresh local dishes made with love. Taste the best Ugandan flavors in a beautiful setting.</p><span class="service-tag">Book a Table</span></div></div>
+    <div class="service-card"><img src="2.jpg" class="service-img" onerror="this.src='https://placehold.co/600x400/E6D4C2/A75928?text=Gift+Shop'"><div class="service-info"><h3>🛍️ Gift Shop</h3><p>Handmade baskets, beads, and local crafts. Take home a piece of Uganda.</p><span class="service-tag">Shop Now</span></div></div>
+    <div class="service-card"><img src="3.jpg" class="service-img" onerror="this.src='https://placehold.co/600x400/F3E3D2/BF6733?text=Special+Dishes'"><div class="service-info"><h3>👨‍🍳 Chef Specials</h3><p>Try our famous matoke, grilled fish, and daily special meals made fresh.</p><span class="service-tag">View Menu</span></div></div>
+    <div class="service-card"><img src="4.jpg" class="service-img" onerror="this.src='https://placehold.co/600x400/F8ECD9/C86F38?text=Cocktail+Bar'"><div class="service-info"><h3>🍹 Bar & Lounge</h3><p>Relax with cold drinks, cocktails, and good music. Perfect for evening chill.</p><span class="service-tag">Happy Hour</span></div></div>
+    <div class="service-card"><img src="5.jpg" class="service-img" onerror="this.src='https://placehold.co/600x400/ECDBCA/C1662F?text=Events+Space'"><div class="service-info"><h3>🎉 Events & Parties</h3><p>Weddings, birthdays, and work parties. We help you celebrate in style.</p><span class="service-tag">Plan Event</span></div></div>
+  </div>
+
+  <div class="tourism-card">
+    <i class="fas fa-tree" style="font-size: 2.5rem; color:#C6682E;"></i>
+    <h3 style="margin: 15px 0;">Explore Uganda with ROFO LEGEND TOURS</h3>
+    <p>Safaris, city tours, and cultural trips. Let us help you discover the beauty of Uganda.</p>
+    <a href="https://rayictcentre.github.io/ROFO-LEGEND-TOURS/index.html" target="_blank"><img src="ROFO LEGEND TOURS.jpeg" alt="ROFO LEGEND TOURS" onerror="this.src='https://placehold.co/400x200/BA6734/white?text=ROFO+LEGEND+TOURS'"></a>
+    <div><a href="https://rayictcentre.github.io/ROFO-LEGEND-TOURS/index.html" target="_blank" class="btn-primary" style="margin-top: 20px;">Book a Tour →</a></div>
+  </div>
+</div>
+
+<div class="footer-bar">
+  <div class="container">
+    <div class="footer-content"><div class="footer-col"><h4>Ibamba</h4><p>Modern African elegance<br>in Kampala's heart</p></div><div class="footer-col"><h4>Contact</h4><p><i class="fas fa-phone"></i> +256 705 999 227<br><i class="fas fa-envelope"></i> ibambacatering@gmail.com</p></div><div class="footer-col"><h4>Follow Us</h4><div class="social-icons"><i class="fab fa-instagram"></i><i class="fab fa-facebook-f"></i><i class="fab fa-tripadvisor"></i></div></div></div>
+    <div class="copyright"><p>© 2025 Ibamba Restaurant — Plot 7 Katego Road, Kampala | Open daily 7AM–12AM</p></div>
+  </div>
+</div>
+
+<script>
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const navLinks = document.getElementById('navLinks');
+  mobileBtn.addEventListener('click', () => navLinks.classList.toggle('show'));
+</script>
+</body>
+</html>
